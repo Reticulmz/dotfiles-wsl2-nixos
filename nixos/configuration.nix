@@ -20,7 +20,7 @@
 
   wsl.enable = true;
   wsl.defaultUser = "reticulmz";
-  wsl.wslConf.interop.appendWindowsPath = false;
+  wsl.interop.includePath = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
