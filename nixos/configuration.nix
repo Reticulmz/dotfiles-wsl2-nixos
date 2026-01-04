@@ -26,7 +26,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  environment.systemPackages = with pkgs; [ wget neovim git ];
+  environment.systemPackages = with pkgs; [ wget neovim git gh nil];
 
   programs.nix-ld.enable = true;
 }
