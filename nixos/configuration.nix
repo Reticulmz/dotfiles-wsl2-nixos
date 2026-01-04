@@ -44,6 +44,6 @@
     nil
     wslu
   ];
-
+  environment.variables.EDITOR = "nvim";
   programs.nix-ld.enable = true;
 }
