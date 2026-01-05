@@ -50,4 +50,7 @@
   ];
   environment.variables.EDITOR = "nvim";
   programs.nix-ld.enable = true;
+  virtualisation.docker = {
+    enable = true;
+  };
 }
