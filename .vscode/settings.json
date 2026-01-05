@@ -1,4 +1,4 @@
 {
-    "nix.serverPath": "nixd",
+    "nix.serverPath": "nil",
     "nix.enableLanguageServer": true
 }
