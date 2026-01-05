@@ -47,6 +47,7 @@
     wslu
     nixfmt-rfc-style
     nixd
+    zsh
   ];
   environment.variables.EDITOR = "nvim";
   programs.nix-ld.enable = true;
