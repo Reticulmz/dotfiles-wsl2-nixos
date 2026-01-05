@@ -45,6 +45,8 @@
     gh
     nil
     wslu
+    nixfmt-rfc-style
+    nixd
   ];
   environment.variables.EDITOR = "nvim";
   programs.nix-ld.enable = true;
