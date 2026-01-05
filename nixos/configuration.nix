@@ -54,4 +54,6 @@
   virtualisation.docker = {
     enable = true;
   };
+  programs.zsh.enable = true;
+  users.users.reticulmz.shell = pkgs.zsh;
 }
