@@ -53,6 +53,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+    # ".p10k.zsh".source = ./zsh/p10k.zsh;
   };
 
   # Home Manager can also manage your environment variables through
@@ -97,11 +98,25 @@
     history.path = "$HOME/.zsh_history";
     history.ignoreAllDups = true;
 
+    initContent = ''
+      source ~/.p10k.zsh
+    '';
+
     plugins = [
       {
         name = "powerlevel10k";
         src = pkgs.zsh-powerlevel10k;
         file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "fzf-tab";
+        src = pkgs.zsh-fzf-tab;
+        file = "share/fzf-tab/fzf-tab.plugin.zsh";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = ./zsh/p10k.zsh;
+        file = "p10k.zsh";
       }
     ];
   };
