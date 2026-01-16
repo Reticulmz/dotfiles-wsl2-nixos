@@ -87,6 +87,10 @@
       name = "Reticulmz";
       email = "36363244+Reticulmz@users.noreply.github.com";
     };
+    settings.ghq = {
+      root = "~/projects";
+      user = "reticulmz";
+    };
   };
 
   programs.zsh = {
