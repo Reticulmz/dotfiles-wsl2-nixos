@@ -40,6 +40,8 @@
     zsh-fzf-tab
     ghq
     direnv
+    zsh-completions
+    zoxide
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
