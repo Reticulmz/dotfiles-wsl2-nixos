@@ -42,6 +42,7 @@
     direnv
     zsh-completions
     zoxide
+    devenv
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -104,7 +105,9 @@
     history.size = 1000;
     history.path = "$HOME/.zsh_history";
     history.ignoreAllDups = true;
-
+    initContent = ''
+      eval "$(zoxide init zsh --cmd cd)"
+    '';
     plugins = [
       {
         name = "powerlevel10k";
