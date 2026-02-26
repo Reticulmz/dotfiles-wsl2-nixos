@@ -44,6 +44,8 @@
     zoxide
     devenv
     meld
+    socat
+    gnupg
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -91,6 +93,7 @@
     settings.user = {
       name = "Reticulmz";
       email = "36363244+Reticulmz@users.noreply.github.com";
+      signingKey = "BB934CB30796D877";
     };
     settings.ghq = {
       root = "~/projects";
@@ -98,6 +101,12 @@
     };
     settings.diff = {
       tool = "meld";
+    };
+    settings.gpg = {
+      program = "/mnt/c/Program Files/GnuPG/bin/gpg.exe";
+    };
+    settings.commit = {
+      gpgsign = true;
     };
   };
 
