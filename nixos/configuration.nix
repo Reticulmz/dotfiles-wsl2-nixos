@@ -56,4 +56,8 @@
   };
   programs.zsh.enable = true;
   users.users.reticulmz.shell = pkgs.zsh;
+  nix.settings.trusted-users = [
+    "root"
+    "reticulmz"
+  ];
 }

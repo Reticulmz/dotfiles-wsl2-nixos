@@ -43,6 +43,7 @@
     zsh-completions
     zoxide
     devenv
+    meld
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -94,6 +95,9 @@
     settings.ghq = {
       root = "~/projects";
       user = "reticulmz";
+    };
+    settings.diff = {
+      tool = "meld";
     };
   };
 
