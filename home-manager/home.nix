@@ -107,7 +107,7 @@
       tool = "meld";
     };
     settings.gpg = {
-      program = "/mnt/c/Program\ Files/GnuPG/bin/gpg.exe";
+      program = "gpg";
     };
     settings.commit = {
       gpgsign = true;
