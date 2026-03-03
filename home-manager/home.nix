@@ -147,12 +147,12 @@
 
   services.vscode-server = {
     enable = true;
-    # enableFHS = true;
+    enableFHS = true;
   };
 
   services.antigravity-server = {
     enable = true;
-    # enableFHS = true;
+    enableFHS = true;
   };
 
   programs.direnv = {
