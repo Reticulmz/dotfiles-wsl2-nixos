@@ -108,7 +108,7 @@
       tool = "meld";
     };
     settings.gpg = {
-      program = "/mnt/c/Program Files/GnuPG/bin/gpg.exe";
+      program = "/mnt/c/Program\ Files/GnuPG/bin/gpg.exe";
     };
     settings.commit = {
       gpgsign = true;
@@ -143,6 +143,16 @@
         file = "p10k.zsh";
       }
     ];
+  };
+
+  services.vscode-server = {
+    enable = true;
+    enableFHS = true;
+  };
+
+  services.antigravity-server = {
+    enable = true;
+    enableFHS = true;
   };
 
   programs.direnv = {
