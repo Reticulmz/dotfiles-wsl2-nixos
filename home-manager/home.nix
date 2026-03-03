@@ -49,8 +49,7 @@
     zoxide
     devenv
     meld
-    socat
-    gnupg
+    lazygit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -160,5 +159,4 @@
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
-
 }

@@ -48,6 +48,9 @@
     nixfmt-rfc-style
     nixd
     zsh
+    btop
+    socat
+    gnupg
   ];
   environment.variables.EDITOR = "nvim";
   programs.nix-ld.enable = true;
