@@ -52,6 +52,7 @@
     lazygit
     sourcegit
     smartgit
+    jetbrains.ruby-mine
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -161,4 +162,9 @@
     enableZshIntegration = true;
     nix-direnv.enable = true;
   };
+  programs.jetbrains-remote = {
+    enable = true;
+    ides = with pkgs.jetbrains; [ ruby-mine ];
+  };
+
 }
