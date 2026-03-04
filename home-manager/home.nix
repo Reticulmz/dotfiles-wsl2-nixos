@@ -50,6 +50,8 @@
     devenv
     meld
     lazygit
+    sourcegit
+    smartgit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
