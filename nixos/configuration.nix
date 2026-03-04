@@ -89,4 +89,7 @@
       };
     };
   };
+  services.openssh = {
+    enable = true;
+  };
 }
