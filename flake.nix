@@ -11,6 +11,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs-devenv.url = "github:nixos/nixpkgs/3c46954c517169a4930a0f7308474d7d87fb47c1";
   };
 
   outputs =
@@ -20,6 +21,7 @@
       home-manager,
       vscode-server,
       antigravity-server,
+      nixpkgs-devenv,
       ...
     }:
     let
@@ -45,7 +47,9 @@
           vscode-server.homeModules.default
           antigravity-server.homeModules.default
         ];
-
+        extraSpecialArgs = {
+          oldPkgs = import nixpkgs-devenv { system = "x86_64-linux"; };
+        };
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
       };
