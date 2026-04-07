@@ -1,6 +1,15 @@
-{ ... }:
+{ config, ... }:
 
 {
+  sops.secrets.github_pat = {
+    sopsFile = ../../secrets/home-manager.yaml;
+    key = "github_pat";
+  };
+
+  programs.zsh.initContent = ''
+    export GITHUB_PERSONAL_ACCESS_TOKEN="$(cat ${config.sops.secrets.github_pat.path})"
+  '';
+
   programs.claude-code = {
     enable = true;
     mcpServers = {
@@ -23,10 +32,6 @@
           "--project"
           "$PWD"
         ];
-      };
-      github = {
-        type = "http";
-        url = "https://api.githubcopilot.com/mcp/";
       };
       playwright = {
         type = "stdio";

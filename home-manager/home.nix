@@ -26,6 +26,8 @@
 
   home.file = { };
 
+  sops.age.keyFile = "/home/reticulmz/.config/sops/age/keys.txt";
+
   programs.home-manager.enable = true;
 
 }

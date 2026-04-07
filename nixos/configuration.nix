@@ -44,6 +44,8 @@
     socat
     gnupg
     navi
+    age
+    sops
   ];
   environment.variables.EDITOR = "nvim";
 

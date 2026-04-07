@@ -1,0 +1,7 @@
+keys:
+  - &reticulmz age1p3mxzm3c3t98q6td8lkxysng5q5w399v6lxj3qpw2mn0c44xca3s23c7ku
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    key_groups:
+      - age:
+          - *reticulmz

@@ -12,6 +12,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs-devenv.url = "github:nixos/nixpkgs/3c46954c517169a4930a0f7308474d7d87fb47c1";
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -22,6 +26,7 @@
       vscode-server,
       antigravity-server,
       nixpkgs-devenv,
+      sops-nix,
       ...
     }:
     let
@@ -44,6 +49,7 @@
         # the path to your home.nix.
         modules = [
           ./home-manager/home.nix
+          sops-nix.homeManagerModules.sops
           vscode-server.homeModules.default
           antigravity-server.homeModules.default
         ];
