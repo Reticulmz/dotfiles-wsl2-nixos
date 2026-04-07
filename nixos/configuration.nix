@@ -19,6 +19,7 @@
     ./modules/docker.nix
     ./modules/zsh.nix
     ./modules/nix-ld.nix
+    ./modules/nix.nix
   ];
 
   # This value determines the NixOS release from which the default
@@ -28,11 +29,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.05"; # Did you read the comment?
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
 
   environment.systemPackages = with pkgs; [
     wget
@@ -50,10 +46,6 @@
     navi
   ];
   environment.variables.EDITOR = "nvim";
-  nix.settings.trusted-users = [
-    "root"
-    "reticulmz"
-  ];
 
   services.openssh = {
     enable = true;
