@@ -38,7 +38,6 @@
     git
     gh
     nil
-    wslu
     nixfmt
     nixd
     btop
