@@ -14,16 +14,12 @@
 
 {
   imports = [
-    # include NixOS-WSL modules
-    # <nixos-wsl/modules>
+    ./modules/wsl.nix
+    ./modules/fonts.nix
+    ./modules/docker.nix
+    ./modules/zsh.nix
+    ./modules/nix-ld.nix
   ];
-
-  wsl.enable = true;
-  wsl.defaultUser = "reticulmz";
-  wsl.wslConf.interop.enabled = true;
-  wsl.wslConf.interop.appendWindowsPath = false;
-  wsl.interop.register = true;
-  wsl.interop.includePath = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
@@ -40,6 +36,7 @@
 
   environment.systemPackages = with pkgs; [
     wget
+    vim
     neovim
     git
     gh
@@ -47,48 +44,17 @@
     wslu
     nixfmt
     nixd
-    zsh
     btop
     socat
     gnupg
+    navi
   ];
   environment.variables.EDITOR = "nvim";
-  programs.nix-ld.enable = true;
-  virtualisation.docker = {
-    enable = true;
-  };
-  programs.zsh.enable = true;
-  users.users.reticulmz.shell = pkgs.zsh;
   nix.settings.trusted-users = [
     "root"
     "reticulmz"
   ];
 
-  fonts = {
-    fonts = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      noto-fonts-color-emoji
-    ];
-
-    fontconfig = {
-      enable = true;
-
-      defaultFonts = {
-        sansSerif = [
-          "Noto Sans CJK JP"
-        ];
-        serif = [
-          "Noto Serif JP"
-        ];
-      };
-
-      subpixel = {
-        lcdfilter = "light";
-      };
-    };
-  };
   services.openssh = {
     enable = true;
   };
