@@ -36,11 +36,11 @@
         file = "p10k.zsh";
       }
     ];
-  };
-  programs.zsh.zsh-abbr = {
-    enable = true;
-    abbreviations = {
-      cc = "claude";
+    zsh-abbr = {
+      enable = true;
+      abbreviations = {
+        cc = "claude";
+      };
     };
   };
 }
