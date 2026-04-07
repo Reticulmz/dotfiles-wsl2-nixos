@@ -20,6 +20,7 @@
     ./modules/zsh.nix
     ./modules/nix-ld.nix
     ./modules/nix.nix
+    ./modules/locale.nix
   ];
 
   # This value determines the NixOS release from which the default
