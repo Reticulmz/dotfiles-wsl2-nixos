@@ -1,6 +1,10 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    rtk
+  ];
+
   sops.secrets.github_pat = {
     sopsFile = ../../secrets/home-manager.yaml;
     key = "github_pat";
