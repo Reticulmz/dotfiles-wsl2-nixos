@@ -24,6 +24,8 @@
   home.packages = with pkgs; [
   ];
 
+  home.sessionPath = [ "$HOME/.npm/bin" ];
+
   home.file = { };
 
   sops.age.keyFile = "/home/reticulmz/.config/sops/age/keys.txt";
