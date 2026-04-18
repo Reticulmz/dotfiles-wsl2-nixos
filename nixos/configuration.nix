@@ -13,6 +13,8 @@
 }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     ./modules/wsl.nix
     ./modules/fonts.nix
