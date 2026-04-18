@@ -18,6 +18,14 @@
     history.ignoreAllDups = true;
     initContent = ''
       eval "$(zoxide init zsh --cmd cd)"
+
+      hms() {
+        if [ -z "$1" ]; then
+          echo "Usage: hms <hostname>" >&2
+          return 1
+        fi
+        home-manager switch --flake ~/dotfiles#"$1"
+      }
     '';
     plugins = [
       {
