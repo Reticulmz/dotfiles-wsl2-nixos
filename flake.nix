@@ -16,6 +16,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs =
@@ -27,6 +32,8 @@
       antigravity-server,
       nixpkgs-devenv,
       sops-nix,
+      nix-index-database,
+      nix-alien,
       ...
     }:
     let
@@ -50,11 +57,13 @@
         modules = [
           ./home-manager/home.nix
           sops-nix.homeManagerModules.sops
+          nix-index-database.homeModules.nix-index
           vscode-server.homeModules.default
           antigravity-server.homeModules.default
         ];
         extraSpecialArgs = {
           oldPkgs = import nixpkgs-devenv { system = "x86_64-linux"; };
+          nix-alien = nix-alien.packages.${system};
         };
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix
