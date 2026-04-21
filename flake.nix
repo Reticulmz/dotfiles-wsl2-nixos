@@ -5,8 +5,6 @@
     # Specify the source of Home Manager and Nixpkgs.
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-wsl.url = "github:nix-community/nixos-wsl";
-    vscode-server.url = "github:nix-community/nixos-vscode-server";
-    antigravity-server.url = "github:LokiSharp/nixos-antigravity-server";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,8 +26,6 @@
       nixpkgs,
       nixos-wsl,
       home-manager,
-      vscode-server,
-      antigravity-server,
       nixpkgs-devenv,
       sops-nix,
       nix-index-database,
@@ -58,8 +54,6 @@
           ./home-manager/home.nix
           sops-nix.homeManagerModules.sops
           nix-index-database.homeModules.nix-index
-          vscode-server.homeModules.default
-          antigravity-server.homeModules.default
         ];
         extraSpecialArgs = {
           oldPkgs = import nixpkgs-devenv { system = "x86_64-linux"; };

@@ -11,16 +11,6 @@
     ides = with pkgs.jetbrains; [ ruby-mine ];
   };
 
-  services.vscode-server = {
-    enable = true;
-    enableFHS = true;
-  };
-
-  services.antigravity-server = {
-    enable = true;
-    enableFHS = true;
-  };
-
   home.sessionVariables = {
     EDITOR = "nvim";
   };
