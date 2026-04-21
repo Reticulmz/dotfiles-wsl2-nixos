@@ -24,7 +24,10 @@
   home.packages = with pkgs; [
   ];
 
-  home.sessionPath = [ "$HOME/.npm/bin" ];
+  home.sessionPath = [
+    "$HOME/.npm/bin"
+    "$HOME/.local/bin"
+  ];
 
   home.file = { };
 
